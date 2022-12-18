@@ -22,6 +22,8 @@ public enum SwipeActionStyle: Int {
  This class lets you define one or more custom actions to display for a given item in your table/collection. Each instance of this class represents a single action to perform and includes the text, formatting information, and behavior for the corresponding button.
  */
 public class SwipeAction: NSObject {
+    public var cornerRadius: CGFloat?
+  
     /// An optional unique action identifier.
     public var identifier: String?
     

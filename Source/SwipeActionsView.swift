@@ -112,7 +112,7 @@ class SwipeActionsView: UIView {
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         
-
+/*
     #if canImport(Combine)
         if let backgroundColor = options.backgroundColor {
             self.backgroundColor = backgroundColor
@@ -130,7 +130,7 @@ class SwipeActionsView: UIView {
             backgroundColor = #colorLiteral(red: 0.7803494334, green: 0.7761332393, blue: 0.7967314124, alpha: 1)
         }
     #endif
-        
+*/
         buttons = addButtons(for: self.actions, withMaximum: maxSize, contentEdgeInsets: contentEdgeInsets)
     }
     

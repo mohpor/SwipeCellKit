@@ -59,6 +59,11 @@ class SwipeActionButton: UIButton {
         setTitleColor(highlightedTextColor, for: .highlighted)
         setImage(action.image, for: .normal)
         setImage(action.highlightedImage ?? action.image, for: .highlighted)
+        backgroundColor = action.backgroundColor
+      if let cornerRadius = action.cornerRadius {
+        layer.cornerRadius = cornerRadius
+        layer.masksToBounds = true
+      }
     }
     
     override var isHighlighted: Bool {
