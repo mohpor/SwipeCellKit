@@ -64,6 +64,7 @@ class SwipeActionButton: UIButton {
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = true
       }
+      alpha = 0.0
     }
     
     override var isHighlighted: Bool {
