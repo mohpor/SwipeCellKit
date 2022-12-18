@@ -142,7 +142,7 @@ class SwipeActionsView: UIView {
         let buttons: [SwipeActionButton] = actions.map({ action in
             let actionButton = SwipeActionButton(action: action)
             actionButton.addTarget(self, action: #selector(actionTapped(button:)), for: .touchUpInside)
-            actionButton.autoresizingMask = [.flexibleHeight, orientation == .right ? .flexibleRightMargin : .flexibleLeftMargin]
+//            actionButton.autoresizingMask = [.flexibleHeight, orientation == .right ? .flexibleRightMargin : .flexibleLeftMargin]
             actionButton.spacing = options.buttonSpacing ?? 8
             actionButton.contentEdgeInsets = buttonEdgeInsets(fromOptions: options)
             return actionButton
@@ -170,7 +170,11 @@ class SwipeActionsView: UIView {
                 addSubview(wrapperView)
             }
             
-            button.frame = wrapperView.contentRect
+          button.topAnchor.constraint(equalTo: wrapperView.topAnchor).isActive = true
+          button.bottomAnchor.constraint(equalTo: wrapperView.bottomAnchor).isActive = true
+          button.leadingAnchor.constraint(equalTo: wrapperView.leadingAnchor, constant: button.spacing).isActive = true
+          button.trailingAnchor.constraint(equalTo: wrapperView.trailingAnchor).isActive = true
+//            button.frame = wrapperView.contentRect
             button.maximumImageHeight = maximumImageHeight
             button.verticalAlignment = options.buttonVerticalAlignment
             button.shouldHighlight = action.hasBackgroundColor
