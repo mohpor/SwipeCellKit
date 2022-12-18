@@ -296,7 +296,7 @@ class SwipeActionButtonWrapperView: UIView {
         
         super.init(frame: frame)
         
-        configureBackgroundColor(with: action)
+//        configureBackgroundColor(with: action)
     }
     
     override func draw(_ rect: CGRect) {
