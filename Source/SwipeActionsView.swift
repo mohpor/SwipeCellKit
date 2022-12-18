@@ -159,7 +159,12 @@ class SwipeActionsView: UIView {
             let wrapperView = SwipeActionButtonWrapperView(frame: frame, action: action, orientation: orientation, contentWidth: minimumButtonWidth)
             wrapperView.translatesAutoresizingMaskIntoConstraints = false
             wrapperView.addSubview(button)
-            
+          
+          if let cornerRadius = action.cornerRadius {
+            wrapperView.layer.cornerRadius = cornerRadius
+            wrapperView.layer.masksToBounds = true
+          }
+          
             if let effect = action.backgroundEffect {
                 let effectView = UIVisualEffectView(effect: effect)
                 effectView.frame = wrapperView.frame
