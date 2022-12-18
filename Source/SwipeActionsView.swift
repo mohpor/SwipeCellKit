@@ -132,6 +132,10 @@ class SwipeActionsView: UIView {
     #endif
 */
         buttons = addButtons(for: self.actions, withMaximum: maxSize, contentEdgeInsets: contentEdgeInsets)
+      if let cornerRadius = options.containerCornerRadius {
+        layer.cornerRadius = cornerRadius
+        layer.masksToBounds = true
+      }
     }
     
     required init?(coder aDecoder: NSCoder) {
